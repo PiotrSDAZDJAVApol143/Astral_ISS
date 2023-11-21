@@ -11,16 +11,28 @@ public class CityWeatherDb {
     public void add(CityDataEntity entity) {
         dataBase.put(entity.getId(), entity);
     }
+    public CityDataEntity get(Long id) {
+        return dataBase.get(id);
+    }
 
     public void delete(CityDataEntity entity) {
         dataBase.remove(entity.getId(), entity);
     }
 
-    public void modify(CityDataEntity entity, String name) {
-        dataBase.computeIfPresent(entity.getId(), (id, existingEntity) -> {
+    public CityDataEntity modify(CityDataEntity entity, String name, WeatherDataEntity weatherDataEntity) {
+        return dataBase.computeIfPresent(entity.getId(), (id, existingEntity) -> {
             existingEntity.setName(name);
-            return existingEntity;
-        });
-
+            existingEntity.setWeatherDataEntity(weatherDataEntity);
+           return existingEntity;
+       });
     }
+  public CityDataEntity change(CityDataEntity entity) {
+      // wyszukac po id ? jak wyciągamy obiekt po kluczu?
+      final CityDataEntity toChange = dataBase.get(entity.getId());
+      // zmodyfikowac jego pola (settery)
+      toChange.setName(entity.getName());
+      toChange.setWeatherDataEntity(entity.getWeatherDataEntity());
+      // zapisać ponownie do mapy ? jak dodajemy po kluczu bwartość
+      return dataBase.put(entity.getId(), toChange);
+  }
 }

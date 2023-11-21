@@ -51,6 +51,12 @@ class CityWeatherDbTest {
     }
     @Test
     void should_get_id(){
-
+        // given
+        final long id = 1L;
+        final String cityName = "Warsaw";
+        final CityDataEntity cityDataEntity = new CityDataEntity();
+        cityDataEntity.setId(id);
+        cityDataEntity.setName(cityName);
+        cityWeatherDb.add(cityDataEntity);
     }
 }

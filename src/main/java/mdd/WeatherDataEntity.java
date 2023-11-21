@@ -1,5 +1,7 @@
 package mdd;
 
+
+
 import java.time.LocalDate;
 
 public class WeatherDataEntity {
