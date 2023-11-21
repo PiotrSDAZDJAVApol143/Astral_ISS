@@ -11,8 +11,16 @@ public class CityWeatherDb {
     public void add(CityDataEntity entity) {
         dataBase.put(entity.getId(), entity);
     }
-    public void delete(CityDataEntity entity){
+
+    public void delete(CityDataEntity entity) {
         dataBase.remove(entity.getId(), entity);
     }
 
+    public void modify(CityDataEntity entity, String name) {
+        dataBase.computeIfPresent(entity.getId(), (id, existingEntity) -> {
+            existingEntity.setName(name);
+            return existingEntity;
+        });
+
+    }
 }
