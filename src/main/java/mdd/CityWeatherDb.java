@@ -2,6 +2,7 @@ package mdd;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public class CityWeatherDb {
 
@@ -11,12 +12,12 @@ public class CityWeatherDb {
     public void add(CityDataEntity entity) {
         dataBase.put(entity.getId(), entity);
     }
-    public CityDataEntity get(Long id) {
-        return dataBase.get(id);
+    public Optional<CityDataEntity> get(Long id) {
+        return Optional.ofNullable(dataBase.get(id));
     }
 
-    public boolean delete(CityDataEntity entity) {
-        return dataBase.remove(entity.getId(), entity);
+    public void delete(long id) {
+         dataBase.remove(id);
     }
 
     public CityDataEntity modify(CityDataEntity entity, String name, WeatherDataEntity weatherDataEntity) {

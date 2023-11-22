@@ -3,64 +3,66 @@ package mdd;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Optional;
+
 class CityWeatherDbTest {
-    private static final CityWeatherDb cityWeatherDb = new CityWeatherDb();
-
-
-    @Test
-    void addTest() {
-        //given
-        final CityDataEntity entity = new CityDataEntity();
-        entity.setId(1L);
-        entity.setName("Warszawa");
-
-        //when
-        cityWeatherDb.add(entity);
-
-
-        //then
-     //   Assertions.assertEquals(entity, entity.);
-    }
+    private static final CityWeatherDb dataBase = new CityWeatherDb();
 
     @Test
-    void deleteTest() {
-    }
-
-    @Test
-    void modify() {
-    }
-    @Test
-    void change() {
+    void should_change_entity() {
         // given
         final long id = 1L;
         final String cityName = "Warsaw";
         final CityDataEntity cityDataEntity = new CityDataEntity();
         cityDataEntity.setId(id);
         cityDataEntity.setName(cityName);
-        cityWeatherDb.add(cityDataEntity);
+        dataBase.add(cityDataEntity);
 
         final CityDataEntity changedCityDataEntity = new CityDataEntity();
         changedCityDataEntity.setId(id);
         final String newName = cityName + "AAA";
         changedCityDataEntity.setName(newName);
         // when
-        cityWeatherDb.change(changedCityDataEntity);
+        dataBase.change(changedCityDataEntity);
         // then
-        final CityDataEntity result = cityWeatherDb.get(id);
-        Assertions.assertEquals(result.getName(), newName);
+        final Optional<CityDataEntity> resultOpt = dataBase.get(id);
+        final String name = resultOpt.orElseThrow().getName();
+        Assertions.assertEquals(name, newName);
     }
+
     @Test
-    void should_get_id(){
+    void should_get_entity_by_id() {
         // given
         final long id = 1L;
         final String cityName = "Warsaw";
         final CityDataEntity cityDataEntity = new CityDataEntity();
         cityDataEntity.setId(id);
         cityDataEntity.setName(cityName);
-        cityWeatherDb.add(cityDataEntity);
+        dataBase.add(cityDataEntity);
         // when
-        final CityDataEntity result = cityWeatherDb.get(id);
+        final CityDataEntity result = dataBase.get(id).orElseThrow();
         // then
-        Assertions.assertEquals(result.getName(),cityName);
+        Assertions.assertEquals(result.getName(), cityName);
     }
+
+  //  @Test
+ //  void should_delete_an_element_from_database() {
+ //      // given
+ //      final long id = createAndAddUser(1L, "Warszawa");
+ //      // when
+ //      dataBase.delete(id);
+ //      // then
+ //      final var resultOpt = dataBase.get(id);
+ //      final boolean isPresent = resultOpt.isPresent();
+ //      Assertions.assertFalse(isPresent);
+ //  }
+
+  // private static long createAndAddUser(Long id, String cityName) {
+  //     final CityDataEntity cityDataEntity = new CityDataEntity();
+  //     cityDataEntity.setId(id);
+  //     cityDataEntity.setName(cityName);
+  //     final CityDataEntity add = dataBase.add(cityDataEntity);
+  //     return id;
+   // }
+
 }
