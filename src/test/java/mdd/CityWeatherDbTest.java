@@ -58,5 +58,9 @@ class CityWeatherDbTest {
         cityDataEntity.setId(id);
         cityDataEntity.setName(cityName);
         cityWeatherDb.add(cityDataEntity);
+        // when
+        final CityDataEntity result = cityWeatherDb.get(id);
+        // then
+        Assertions.assertEquals(result.getName(),cityName);
     }
 }

@@ -15,8 +15,8 @@ public class CityWeatherDb {
         return dataBase.get(id);
     }
 
-    public void delete(CityDataEntity entity) {
-        dataBase.remove(entity.getId(), entity);
+    public boolean delete(CityDataEntity entity) {
+        return dataBase.remove(entity.getId(), entity);
     }
 
     public CityDataEntity modify(CityDataEntity entity, String name, WeatherDataEntity weatherDataEntity) {
