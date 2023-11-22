@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="141c86ad-491e-4207-a3d7-5a0a81cece82" name="Changes" comment="coś tu padlo :) teraz działa">
+    <list default="true" id="141c86ad-491e-4207-a3d7-5a0a81cece82" name="Changes" comment="dodana funkcja wpisz findCity po press Z">
+      <change afterPath="$PROJECT_DIR$/src/test/java/services/WeatherServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mdd/CityWeatherDb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mdd/CityWeatherDb.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/WeatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/WeatherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/mdd/CityWeatherDbTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mdd/CityWeatherDbTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +64,7 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="services" />
       <recent name="mdd" />
     </key>
   </component>
@@ -126,12 +124,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WeatherServiceTest.getWeatherFromOpenWeather" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Astral_ISS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="services" />
+      <option name="MAIN_CLASS_NAME" value="services.WeatherServiceTest" />
+      <option name="METHOD_NAME" value="getWeatherFromOpenWeather" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.WeatherServiceTest.getWeatherFromOpenWeather" />
         <item itemvalue="JUnit.CityWeatherDbTest.deleteTest" />
         <item itemvalue="JUnit.CityWeatherDbTest.addTest" />
         <item itemvalue="JUnit.CityWeatherDbTest.should_get_id" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -209,7 +223,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700671117218</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="dodana funkcja wpisz findCity po press Z">
+      <option name="closed" value="true" />
+      <created>1700680874871</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1700680874871</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -242,6 +264,7 @@
     <MESSAGE value="modyfikacja name" />
     <MESSAGE value="coś tu padlo :)" />
     <MESSAGE value="coś tu padlo :) teraz działa" />
-    <option name="LAST_COMMIT_MESSAGE" value="coś tu padlo :) teraz działa" />
+    <MESSAGE value="dodana funkcja wpisz findCity po press Z" />
+    <option name="LAST_COMMIT_MESSAGE" value="dodana funkcja wpisz findCity po press Z" />
   </component>
 </project>
