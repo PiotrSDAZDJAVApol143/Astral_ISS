@@ -45,24 +45,24 @@ class CityWeatherDbTest {
         Assertions.assertEquals(result.getName(), cityName);
     }
 
-  //  @Test
- //  void should_delete_an_element_from_database() {
- //      // given
- //      final long id = createAndAddUser(1L, "Warszawa");
- //      // when
- //      dataBase.delete(id);
- //      // then
- //      final var resultOpt = dataBase.get(id);
- //      final boolean isPresent = resultOpt.isPresent();
- //      Assertions.assertFalse(isPresent);
- //  }
+    @Test
+   void should_delete_an_element_from_database() {
+       // given
+       final long id = createAndAddUser(1L, "Warszawa");
+       // when
+       dataBase.delete(id);
+       // then
+       final var resultOpt = dataBase.get(id);
+       final boolean isPresent = resultOpt.isPresent();
+       Assertions.assertFalse(isPresent);
+   }
 
-  // private static long createAndAddUser(Long id, String cityName) {
-  //     final CityDataEntity cityDataEntity = new CityDataEntity();
-  //     cityDataEntity.setId(id);
-  //     cityDataEntity.setName(cityName);
-  //     final CityDataEntity add = dataBase.add(cityDataEntity);
-  //     return id;
-   // }
+   private static long createAndAddUser(Long id, String cityName) {
+       final CityDataEntity cityDataEntity = new CityDataEntity();
+       cityDataEntity.setId(id);
+       cityDataEntity.setName(cityName);
+       final CityDataEntity add = dataBase.add(cityDataEntity);
+       return id;
+    }
 
 }
